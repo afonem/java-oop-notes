@@ -1,0 +1,6 @@
+package BütA_Z;
+
+public interface Printable {
+	void printInfo();
+
+}

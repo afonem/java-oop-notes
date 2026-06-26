@@ -1,0 +1,47 @@
+package BütA_Z;
+
+import java.util.ArrayList;
+
+public class Club <T extends Student> {
+	private String clubName;
+	private int clubMaxMember;
+	private ArrayList<Student> clubMembers;
+	private int clubMember;
+	public Club(String clubName, int clubMaxMember) {
+		
+		this.clubName = clubName;
+		this.clubMaxMember = clubMaxMember;
+		this.clubMembers = new ArrayList<>();
+		this.clubMember=0;
+	}
+	
+	public void addMember(Student target) throws ClubException {
+
+		if(this.clubMember<clubMaxMember) {
+		clubMembers.add(target);
+		this.clubMember++;
+		System.out.println("added");
+		}
+		else {
+			throw new ClubException("club members max");
+		}
+		
+		
+	}
+	public void deleteMember(int id) {
+		for(Student a: clubMembers) {
+			if (a.getId()==id) {
+				clubMembers.remove( a.getId() ==id);
+				System.out.println("member who has id , id deleted");
+				this.clubMember--;
+				
+			}else {
+				System.out.println("not found");
+			}
+			
+		}
+	}
+	
+	
+
+}

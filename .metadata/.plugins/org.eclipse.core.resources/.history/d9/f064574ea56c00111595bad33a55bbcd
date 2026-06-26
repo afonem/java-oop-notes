@@ -1,0 +1,41 @@
+package FILE_I_and_O;
+import java.io.*;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.util.Scanner;
+
+public class Try1 {
+
+	public static void main(String[] args) throws FileNotFoundException {
+		PrintWriter pw = new PrintWriter("students.txt");
+		pw.print("Ali");
+		pw.print("  ");
+		pw.println(80);
+		pw.print("Ayşe");
+		pw.print("  ");
+		pw.println(65);
+		pw.print("veli");
+		pw.print("  ");
+		pw.println(45);
+		pw.close();
+		Scanner sc = new Scanner(new File("students.txt"));
+		int sum = 0;
+		int a = 0;
+		int b =sc.nextInt(0);
+		while(sc.hasNextInt()) {
+			sum+=sc.nextInt();
+			
+			if(b<sc.nextInt(a)) {
+				b=sc.nextInt(a);
+			}
+			a++;
+		}
+		System.out.println("sum = " + sum);
+		sc.close();
+		System.out.println("average of grade = " + sum/a);
+		System.out.println("the highest grade = "+ b);
+		
+
+	}
+
+}

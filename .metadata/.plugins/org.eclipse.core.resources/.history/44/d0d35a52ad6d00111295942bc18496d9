@@ -1,0 +1,27 @@
+package FILE_I_and_O;
+import java.io.*;
+import java.io.PrintWriter;
+import java.util.Scanner;
+
+
+public class Sos {
+
+	public static void main(String[] args) throws Exception {
+		PrintWriter pw = new PrintWriter("Students2");
+		pw.println("Ahmet,78");
+		pw.println("Zeynep,92");
+		pw.println("Mehmet,45");
+	pw.println("Ayşe,88");
+		pw.println("Burak,60");
+		pw.println("Elif,95");
+		pw.close();
+		Scanner sc = new Scanner(new File("Studens2"));
+		while(sc.hasNext()) {
+			
+		}
+		
+		
+
+	}
+
+}

@@ -1,0 +1,32 @@
+package BütA_Z;
+
+public class main {
+
+	public static void main(String[] args) throws ClubException {
+		Student ali = new Student("Ali",332);
+		Student ayşe = new Student("ayşe",126);
+		Student veli = new Student("veli",495);
+		Club AI = new Club("AI",2);
+		try {
+			Student aliAI = ali.clone();
+			Student aliML = ali.clone();
+			Student ayşeAI = ayşe.clone(); 
+			Student ayşeML = ayşe.clone();
+			Student ayşeDL=ayşe.clone();
+			AI.addMember(ayşeAI);
+			AI.addMember(ayşeAI);
+			
+			
+		}
+		catch(CloneNotSupportedException e) {
+			e.printStackTrace();
+		}
+		ali.compareTo(veli);
+		
+		
+		
+		
+
+	}
+
+}

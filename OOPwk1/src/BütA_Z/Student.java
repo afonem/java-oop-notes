@@ -1,0 +1,115 @@
+package BütA_Z;
+
+public  class Student  implements Registrationable, Comparable<Student>,Cloneable{
+	private int id;
+	private String name ;
+	private int memberOfClube;
+	private int  max;
+
+	public Student(String name, int id) {
+		this.id=id;
+		this.name=name;
+		this.max=2;
+		int memberOfClube=0;
+		
+		
+	}
+
+	
+	public void getMembershipLimit() {
+		
+		
+	}
+
+	
+	public String toString() {
+		return "Name =  " + name + "  id =  " + id  +"  club =  " + memberOfClube;
+		
+	}
+
+	public int getId() {
+		return id;
+	}
+
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+
+	public String getName() {
+		return name;
+	}
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+	public int getMemberOfClube() {
+		return memberOfClube;
+	}
+
+
+	public void setMemberOfClube(int memberOfClube) {
+		this.memberOfClube = memberOfClube;
+	}
+
+
+	public int getMax() {
+		return max;
+	}
+
+
+	public void setMax(int max) {
+		this.max = max;
+	}
+
+
+	@Override
+	public int compareTo(Student o) {
+		          
+		       int a = Double.compare(this.id, o.id);
+		       if((a==1 || a==-1) ) {
+		    	   if(a==-1) {
+			    	   System.out.println(o.id +" > " + this.id);
+			    	   return -1;
+			       }else {
+		    	   System.out.println(o.id +" < " + this.id);
+		    	   return 0;
+		       }
+		       
+		       }
+		       else {
+		    	   
+			    	   System.out.println(o.id +" = " + this.id);
+			    	   return 0;
+			       }
+	}
+		       
+		
+		
+		
+	
+	public Student clone() throws CloneNotSupportedException {
+		this.memberOfClube++;
+		return (Student) super.clone();
+		
+		
+	}
+
+
+	@Override
+	public void registrationable() {
+		if(this.memberOfClube>=2) {
+			System.out.println("can not be registration");
+		}
+		else {
+			System.out.println("can");
+		}
+		
+		
+	}
+
+}

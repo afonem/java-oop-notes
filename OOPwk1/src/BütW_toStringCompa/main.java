@@ -1,0 +1,54 @@
+package BütW_toStringCompa;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
+
+public class main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Inventory< Product> a = new Inventory();
+		Food banana = new Food("banana", 56.99, 100000,9+" day");
+		Electronics computer = new  Electronics("app", 149999.99, 4,"", 12);
+		Electronics computer1 = new  Electronics("msı", 129999.99, 1,"", 9);
+		a.addItem(computer1);
+		a.addItem(computer);
+		a.addItem(banana);
+		Electronics copy =computer.clone();
+		copy.toString();
+		
+		computer.compareTo(computer1);
+		
+		
+	 
+	
+	 Collections.sort(a.getItems());
+	 System.out.println(Collections.max(a.getItems()));
+	 System.out.println(Collections.min(a.getItems()));
+	 a.filterByMaxPrice(11000.0);
+	 List<Product> list = new ArrayList<>();
+	    list.add(banana);
+	    list.add(computer);
+	    list.add(computer1);
+
+	    System.out.println("En pahalı: " + Collections.max(list));
+	    System.out.println("En ucuz: " + Collections.min(list));
+	    Collections.sort(list);
+	    System.out.println("Sıralı liste: ");
+	    for (Product p : list) {
+	        System.out.println(p);
+	    }
+
+	    // Sıralı yazdır
+	    a.printSorted();
+	    computer.toString();
+	    computer.compareTo(computer1);
+
+	  
+	
+
+	}
+
+}

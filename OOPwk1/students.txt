@@ -1,0 +1,3 @@
+Ali 80
+Ayşe 65
+Veli 45

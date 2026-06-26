@@ -1,0 +1,31 @@
+package FILE_I_and_O;
+
+import java.io.PrintWriter;
+import java.util.Scanner;
+import java.io.*;
+
+public class FIO2 {
+
+	public static void main(String[] args) throws Exception {
+		PrintWriter pw = new PrintWriter("number.txt");
+		int a = 120;
+		int b = 240;
+		int c= 306;
+		pw.println(c);
+		pw.println(a);
+		pw.println(b);
+		pw.close();
+		Scanner input = new Scanner(new File("number.txt"));
+		int sum =0;
+		
+		while(input.hasNextInt()) {
+			sum+=input.nextInt();
+			int p= input.nextInt()	;	
+			 System.out.println(p);
+			 }
+		System.out.println(sum);
+		input.close();
+
+	}
+
+}
